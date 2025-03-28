@@ -1,7 +1,11 @@
 FROM ghcr.io/goauthentik/proxy:2025.2.2
 
-# Install Traefik manually inside the container
-RUN apk add --no-cache curl
+# Install curl via apt (because this is Debian-based)
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get clean
+
+# Install Traefik
 RUN curl -sSL https://github.com/traefik/traefik/releases/download/v2.10.4/traefik_v2.10.4_linux_amd64.tar.gz \
     | tar -xz -C /usr/local/bin
 
