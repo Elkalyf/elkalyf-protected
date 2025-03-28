@@ -1,0 +1,9 @@
+http:
+  routers:
+    elkalyf:
+      rule: "Host(`elkalyf.de`)"
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt
+      service: authentik-outpost@docker
