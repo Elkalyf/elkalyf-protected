@@ -1,4 +1,8 @@
 authentik_host: https://auth.elkalyf.de
-token: your-outpost-token-here
+token: your-outpost-token
 listen:
   http: 0.0.0.0:9000
+  https: null
+
+external_host: https://elkalyf-protected-2.onrender.com
+internal_host: http://localhost:3000
