@@ -1,4 +1,4 @@
-authentik_host: https://your-authentik-instance.onrender.com
+authentik_host: https://elkalyf-protected.onrender.com
 token: your-outpost-token
 
 listen:
