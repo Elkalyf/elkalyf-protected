@@ -9,16 +9,21 @@ providers:
     directory: /etc/traefik
     watch: true
 
-api:
-  dashboard: true
-
 log:
   level: DEBUG
+
+api:
+  dashboard: true
 
 http:
   routers:
     protected:
-      rule: "Host(`elkalyf.de`)"
+      rule: "Host(`elkalyf-protected.onrender.com`)"  # or your real domain
       entryPoints:
         - web
-      service: "authentik@file"
+      service: authentik
+  services:
+    authentik:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:9000"
