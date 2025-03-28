@@ -1,0 +1,4 @@
+authentik_host: https://auth.elkalyf.de
+token: your-outpost-token-here
+listen:
+  http: 0.0.0.0:9000

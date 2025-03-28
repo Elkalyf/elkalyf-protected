@@ -1,7 +1,0 @@
-log_level: debug
-listen:
-  http: 0.0.0.0:9000
-  https: null
-
-authentik_host: https://auth.elkalyf.de
-token: your-outpost-token-here

@@ -1,0 +1,24 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+providers:
+  file:
+    directory: /etc/traefik
+    watch: true
+
+api:
+  dashboard: true
+
+log:
+  level: DEBUG
+
+http:
+  routers:
+    protected:
+      rule: "Host(`elkalyf.de`)"
+      entryPoints:
+        - web
+      service: "authentik@file"
